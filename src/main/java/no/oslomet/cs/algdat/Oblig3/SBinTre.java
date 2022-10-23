@@ -85,8 +85,6 @@ public class SBinTre<T> {
 
     //Kildekode fra kompendium 5.2.3.a
     public boolean leggInn(T verdi) {
-
-        //throw new UnsupportedOperationException("Ikke kodet ennå!");
         Objects.requireNonNull(verdi, "Ulovlig med nullverdier!");
 
         Node<T> p = rot, q = null;               // p starter i roten
@@ -101,13 +99,14 @@ public class SBinTre<T> {
 
         // p er nå null, dvs. ute av treet, q er den siste vi passerte
 
-        p = new Node<>(verdi);                   // oppretter en ny node
+        p = new Node<>(verdi, q);                   // oppretter en ny node, med parameter verdi og q
 
         if (q == null) rot = p;                  // p blir rotnode
         else if (cmp < 0) q.venstre = p;         // venstre barn til q
         else q.høyre = p;                        // høyre barn til q
 
         antall++;                                // én verdi mer i treet
+        endringer++;                               //legger til endringer ++
         return true;                             // vellykket innlegging
     }
 
