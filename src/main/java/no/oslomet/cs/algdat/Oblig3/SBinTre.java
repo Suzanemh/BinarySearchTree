@@ -82,7 +82,7 @@ public class SBinTre<T> {
     public boolean tom() {
         return antall == 0;
     }
-
+    //Oppgave 1
     //Kildekode fra kompendium 5.2.3.a
     public boolean leggInn(T verdi) {
         Objects.requireNonNull(verdi, "Ulovlig med nullverdier!");
@@ -118,7 +118,14 @@ public class SBinTre<T> {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
 
+    //Oppgave 2
+    //Kildekode hentet fra Avsnitt 5.2.6 oppgave 2
     public int antall(T verdi) {
+        Node<T> p = rot; //starter i roten
+        int antallVerdi = 0; //hjelpevariabel int antallVerdi som starter på 0
+
+
+
         throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
 
