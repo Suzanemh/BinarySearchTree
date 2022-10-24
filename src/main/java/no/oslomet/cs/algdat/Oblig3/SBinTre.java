@@ -123,17 +123,17 @@ public class SBinTre<T> {
     public int antall(T verdi) {
         Node<T> p = rot; //starter i roten
         int antallVerdi = 0; //hjelpevariabel int antallVerdi som starter på 0
-        while(p !=null){ //while løkke der p ikke er null
-            int cmp = comp.compare(verdi, p.verdi);
-            if( cmp < 0){
-                p = p.venstre;
+        while(p !=null){ //while løkke der p ikke er null. Her sjekker vi p
+            int cmp = comp.compare(verdi, p.verdi); //sammenligning
+            if( cmp < 0){       //hvis hjelpevariabelen cmp er mindre enn 0
+                p = p.venstre;  //går til venstre
             } else {
-                if (cmp == 0){
+                if (cmp == 0){ //hvis hjelpevarabelen cmp er lik 0
                     antallVerdi++;
-                    p = p.høyre;
+                    p = p.høyre;    //går til høyre
                 }
             }
-            return antallVerdi;
+            return antallVerdi; //retur statement
         }
 
 
