@@ -17,4 +17,9 @@ Sammenlignene utføres vha compare-metoden til komperatoren comp. Q skal legges 
 Når p blir null, vil q være den siste noden som ble passert. Deretter skal verdi legges inn som et barn til q.
 Den siste verdien som compare-metoden returnerer, forteller om det skal være venstre eller høyre barn. 
 
-I oppgave 2 så brukte jeg en ... til å ...
+Oppgave 2 fikk jeg inspirasjon fra kompendium 5.2.6 oppgave 2. I denne oppgaven skal 
+jeg opprette metoden int antall(T verdier). Metoden returnerer antall forekomster av verdi. 
+Her koder jeg ved å ta hensyn til når man søker mot høyre, venstre, eller når det er 0. 
+For å gjøre det, må if setninger og while løkke lages. 
+
+
