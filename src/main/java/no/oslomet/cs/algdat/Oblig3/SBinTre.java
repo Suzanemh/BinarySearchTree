@@ -123,7 +123,18 @@ public class SBinTre<T> {
     public int antall(T verdi) {
         Node<T> p = rot; //starter i roten
         int antallVerdi = 0; //hjelpevariabel int antallVerdi som starter på 0
-
+        while(p !=null){ //while løkke der p ikke er null
+            int cmp = comp.compare(verdi, p.verdi);
+            if( cmp < 0){
+                p = p.venstre;
+            } else {
+                if (cmp == 0){
+                    antallVerdi++;
+                    p = p.høyre;
+                }
+            }
+            return antallVerdi;
+        }
 
 
         throw new UnsupportedOperationException("Ikke kodet ennå!");
