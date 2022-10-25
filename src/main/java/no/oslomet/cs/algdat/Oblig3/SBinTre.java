@@ -1,10 +1,7 @@
 package no.oslomet.cs.algdat.Oblig3;
 
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Objects;
-import java.util.StringJoiner;
+import java.util.*;
 
 public class SBinTre<T> {
     private static final class Node<T>   // en indre nodeklasse
@@ -82,6 +79,7 @@ public class SBinTre<T> {
     public boolean tom() {
         return antall == 0;
     }
+
     //Oppgave 1
     //Kildekode fra kompendium 5.2.3.a
     public boolean leggInn(T verdi) {
@@ -120,7 +118,7 @@ public class SBinTre<T> {
 
     //Oppgave 2
     //Kildekode hentet fra Avsnitt 5.2.6 oppgave 2
-    public int antall(T verdi) {
+    public int antall(T verdi) { //metoden
 
         Node<T> p = rot; //starter i roten
         int antallVerdi = 0; //hjelpevariabel int antallVerdi som starter på 0
@@ -138,7 +136,6 @@ public class SBinTre<T> {
                 p = p.høyre;
                 antallVerdi++; //økning
             }
-
         }
         return antallVerdi; //retur statement
     }
@@ -147,10 +144,28 @@ public class SBinTre<T> {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
 
+    //Oppgave 3
+    //Kildekode inspirert fra kompendium 5.1.7.h, men la til andre endringer fo å oppfylle oppgave kravet
+
+    //Skal returnere første node post orden med p som rot
     private static <T> Node<T> førstePostorden(Node<T> p) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+
+        //skjekker at parameteren p ikke er null pga private metode
+        Objects.requireNonNull(p); //skjekker om  ikke er nullverdi
+
+        while(true){
+            if (p.venstre !=null){
+                p = p.venstre;
+            } else if
+            (p.høyre != null){
+                p = p.høyre;
+            } else {
+                return p;
+            }
+        }
     }
 
+    //Oppgave 3
     private static <T> Node<T> nestePostorden(Node<T> p) {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
