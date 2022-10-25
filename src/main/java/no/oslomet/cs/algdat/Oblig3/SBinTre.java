@@ -121,23 +121,26 @@ public class SBinTre<T> {
     //Oppgave 2
     //Kildekode hentet fra Avsnitt 5.2.6 oppgave 2
     public int antall(T verdi) {
+
         Node<T> p = rot; //starter i roten
         int antallVerdi = 0; //hjelpevariabel int antallVerdi som starter på 0
+
         while(p !=null){ //while løkke der p ikke er null. Her sjekker vi p
             int cmp = comp.compare(verdi, p.verdi); //sammenligning
+
             if( cmp < 0){       //hvis hjelpevariabelen cmp er mindre enn 0
                 p = p.venstre;  //går til venstre
+
+            } else if(cmp > 0) { //cmp større enn 0
+                p = p.høyre; //går til høyre
+
             } else {
-                if (cmp == 0){ //hvis hjelpevarabelen cmp er lik 0
-                    antallVerdi++;
-                    p = p.høyre;    //går til høyre
-                }
+                p = p.høyre;
+                antallVerdi++; //økning
             }
-            return antallVerdi; //retur statement
+
         }
-
-
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        return antallVerdi; //retur statement
     }
 
     public void nullstill() {
