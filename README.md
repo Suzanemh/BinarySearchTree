@@ -22,4 +22,18 @@ jeg opprette metoden int antall(T verdier). Metoden returnerer antall forekomste
 Her koder jeg ved å ta hensyn til når man søker mot høyre, venstre, eller når det er 0. 
 For å gjøre det, må if setninger og while løkke lages. 
 
+I oppgave 3 skrev jeg to metoder. Det krevde en del lesing fra kompendium kapittel 5.1.7- 
+Første metode:
+Starter metoden ved å sjekke om parameteren p ikke har gullverdier. Deretter lager jeg en
+whileløkke med flere if statements. Statements tar for seg blant annet hva som skjer hvis
+p sin venstre er ikke lik null, p sin høyre ikke er lik null.
+Avslutter metoden ved å returnere parameteren p.
+
+Andre metode:
+Metoden skal returnere den noden som kommer etter p i postorden,
+På samme måte som i forrige metode, lager jeg if statements med ulike tilfeller.
+Blant annet hva som skjer dersom forelderen er null, dersom forelder til høyrebarn 
+har verdien p, eller dersom det er forelder til høyrebarn er null. Avslutter metoden
+ved å kalle på førstePostOrden som ellers. 
+
 

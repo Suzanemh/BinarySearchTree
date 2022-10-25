@@ -174,17 +174,14 @@ public class SBinTre<T> {
 
     private static <T> Node<T> nestePostorden(Node<T> p) {
 
-
-        Node<T> f = p.forelder; //initialiserer f som p sin forelder
-
-        if (f == null) {
-            return null;
+        if (p.forelder == null) { //dersom forelderen er null. Ikke noe nestePostOrden
+            return null;            //returnerer null
         }
 
-        if(f.høyre == p || f.høyre == null){
-            return f;
+        if(p.forelder.høyre == p || p.forelder.høyre == null){ //krav
+            return p.forelder;  //returnerer foreldre dersom høyrebarm er verdien p, eller returnerer null hvis tomt.
         } else {
-            return førstePostorden(f.høyre);
+            return førstePostorden(p.forelder.høyre); //Kaller på førstPostOrden  ellers
         }
     }
 
