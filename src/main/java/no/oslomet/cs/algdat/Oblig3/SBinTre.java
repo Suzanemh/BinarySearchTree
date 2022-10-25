@@ -154,12 +154,14 @@ public class SBinTre<T> {
         Objects.requireNonNull(p); //skjekker om  ikke er nullverdi
 
         while(true){
-            if (p.venstre !=null){
-                p = p.venstre;
-            } else if
-            (p.høyre != null){
-                p = p.høyre;
-            } else {
+
+            if (p.venstre !=null){ //hvis p sin venstre ikke er lik null
+                p = p.venstre; //går til venstre. Venstrebarn til p
+
+            } else if       //annen statement
+            (p.høyre != null){  //hvis p sin høyre ikke er lik null
+                p = p.høyre;    //går til høyre. Høyrebarn til p
+            } else {            //ellers
                 return p;
             }
         }
