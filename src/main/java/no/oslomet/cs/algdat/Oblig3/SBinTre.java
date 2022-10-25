@@ -168,8 +168,24 @@ public class SBinTre<T> {
     }
 
     //Oppgave 3
+    //nestePostOrden skal returnere den noden som kommer etter p i postorden
+    //følgende kildekode er inspirert fra 5.1.15.b. Forskjellen er at her tar jeg hensyn
+    //til Post, mens kompendium ser på Inn
+
     private static <T> Node<T> nestePostorden(Node<T> p) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+
+
+        Node<T> f = p.forelder; //initialiserer f som p sin forelder
+
+        if (f == null) {
+            return null;
+        }
+
+        if(f.høyre == p || f.høyre == null){
+            return f;
+        } else {
+            return førstePostorden(p);
+        }
     }
 
     public void postorden(Oppgave<? super T> oppgave) {
