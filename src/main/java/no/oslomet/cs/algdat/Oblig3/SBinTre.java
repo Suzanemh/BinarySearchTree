@@ -185,16 +185,55 @@ public class SBinTre<T> {
         }
     }
 
+    //Oppgave 4- uten bruk av rekursjon og uten bruk av hjelpevariabel
+
+    //Kildekoden under er hentet fra kompendium avsnitt 5.1.15 oppgave 1
+
     public void postorden(Oppgave<? super T> oppgave) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+      //  if(rot !=null) postorden(rot, oppgave);
+        if (tom()) return;  // tomt tre
+
+        Node<T> p = rot;
+
+        while (true) // flytter p til den første i postorden
+        {
+            if (p.venstre != null) p = p.venstre;
+            else if (p.høyre != null) p = p.høyre;
+            else break;
+        }
+
+        oppgave.utførOppgave(p.verdi);
+
+        while (true)
+        {
+            if (p == rot) break;  // den siste i postorden
+
+            Node<T> f = p.forelder;
+            if (f.høyre == null || p == f.høyre) p = f;
+            else
+            {
+                p = f.høyre;
+                while (true)
+                {
+                    if (p.venstre != null) p = p.venstre;
+                    else if (p.høyre != null) p = p.høyre;
+                    else break;
+                }
+            }
+            oppgave.utførOppgave(p.verdi);
+        }
     }
 
+
+    //Ikke rør
     public void postordenRecursive(Oppgave<? super T> oppgave) {
         postordenRecursive(rot, oppgave);
     }
 
+    //Oppgave 4- rekursiv metode
+    //Delvis inspirert av kildekode i kompendium programkode 5.1.8.d
     private void postordenRecursive(Node<T> p, Oppgave<? super T> oppgave) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+
     }
 
     public ArrayList<T> serialize() {
