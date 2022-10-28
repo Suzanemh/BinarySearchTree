@@ -36,4 +36,9 @@ Blant annet hva som skjer dersom forelderen er null, dersom forelder til høyreb
 har verdien p, eller dersom det er forelder til høyrebarn er null. Avslutter metoden
 ved å kalle på førstePostOrden som ellers. 
 
+Oppgave 4
+I den første metoden brukte jeg kildekode hentet fra kompendium 5.1.15 oppgave 1.
+Metoden er programmert uten bruk av rekursjon og uten bruk av hjelpevariabler.
+Den andre rekursive metoden, programkode 5.1.5 oppgave 7.  Eneste endringer implementert er at metodenavnet som kalles. 
+
 
