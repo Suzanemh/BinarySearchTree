@@ -228,7 +228,7 @@ public class SBinTre<T> {
     //Oppgave 4
     public void postordenRecursive(Oppgave<? super T> oppgave) {
         if(rot != null) { //Sjekker om treet er tomt
-            postordenRecursive(rot, oppgave);
+            postordenRecursive(rot, oppgave); //Kall
         }
     }
 
