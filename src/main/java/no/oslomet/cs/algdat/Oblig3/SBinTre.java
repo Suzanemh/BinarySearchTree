@@ -225,13 +225,15 @@ public class SBinTre<T> {
     }
 
 
-    //Ikke rør
+    //Oppgave 4
     public void postordenRecursive(Oppgave<? super T> oppgave) {
-        postordenRecursive(rot, oppgave);
+        if(rot != null) { //Sjekker om treet er tomt
+            postordenRecursive(rot, oppgave);
+        }
     }
 
     //Oppgave 4- rekursiv metode
-    //Delvis inspirert av kildekode i kompendium programkode 5.1.8.d
+    //Delvis inspirert av kildekode i kompendium programkode
     private void postordenRecursive(Node<T> p, Oppgave<? super T> oppgave) {
 
     }
