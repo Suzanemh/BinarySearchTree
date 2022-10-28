@@ -235,8 +235,8 @@ public class SBinTre<T> {
     //Oppgave 4- rekursiv metode
     //Inspirert av kildekode i kompendium 5.1.7 oppgave 7
     private void postordenRecursive(Node<T> p, Oppgave<? super T> oppgave) {
-        if (p.venstre != null) postordenRecursive(p.venstre,oppgave);
-        if (p.høyre != null) postordenRecursive(p.høyre,oppgave);
+        if (p.venstre != null) postordenRecursive(p.venstre,oppgave); //Rekursiv p venstre node
+        if (p.høyre != null) postordenRecursive(p.høyre,oppgave); //rekursiv p høyre node
         oppgave.utførOppgave(p.verdi);
     }
 
