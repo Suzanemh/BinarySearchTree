@@ -233,9 +233,11 @@ public class SBinTre<T> {
     }
 
     //Oppgave 4- rekursiv metode
-    //Delvis inspirert av kildekode i kompendium programkode
+    //Inspirert av kildekode i kompendium 5.1.7 oppgave 7
     private void postordenRecursive(Node<T> p, Oppgave<? super T> oppgave) {
-
+        if (p.venstre != null) postordenRecursive(p.venstre,oppgave);
+        if (p.høyre != null) postordenRecursive(p.høyre,oppgave);
+        oppgave.utførOppgave(p.verdi);
     }
 
     public ArrayList<T> serialize() {
